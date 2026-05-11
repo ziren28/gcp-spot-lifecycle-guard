@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily spot lifecycle garbage cleanup
+
+[Timer]
+OnBootSec=10min
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=20min
+Unit=spot-lifecycle-cleanup.service
+
+[Install]
+WantedBy=timers.target

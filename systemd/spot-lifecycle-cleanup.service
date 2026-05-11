@@ -1,0 +1,9 @@
+[Unit]
+Description=Spot lifecycle cleanup
+After=docker.service
+Wants=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/spot-lifecycle/cleanup.sh
+TimeoutStartSec=300

@@ -1,0 +1,13 @@
+[Unit]
+Description=Spot lifecycle boot recovery notifier
+After=network-online.target docker.service
+Wants=network-online.target docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/spot-lifecycle/boot-recovery.sh
+TimeoutStartSec=240
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
